@@ -1,0 +1,187 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.card {
+    width: 395px;
+    height: 520px;
+    background: #2A7B9B;
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 100%, rgba(237, 221, 83, 1) 0%);
+    border-radius: 10px;
+    animation: cardAppear 0.6s ease-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-container {
+    max-width: 500px;
+    margin: 40px 35px;
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-container:focus-within {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search-bar {
+    flex: 1;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 30px 0 0 30px;
+    background: transparent;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+.search-bar:focus {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-button {
+    background: linear-gradient(135deg, #4ae2ce 0%, #3db4a4 100%);
+    border: none;
+    padding: 0 25px;
+    cursor: pointer;
+    border-radius: 0 30px 30px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.search-button:hover {
+    background: linear-gradient(135deg, #3db4a4 0%, #2d8a7e 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(74, 226, 206, 0.3);
+}
+
+.search-button:active {
+    transform: translateY(1px);
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.search-button:hover .search-icon {
+    transform: scale(1.1);
+}
+
+.weather {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    align-items: center;
+    color: white;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.weather .weather-icon {
+    width: 35%;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.weather .weather-icon:hover {
+    transform: scale(1.1);
+}
+
+.weather .temp {
+    font-size: 50px;
+    animation: slideUp 0.5s ease-out;
+}
+
+.weather .city {
+    font-size: 40px;
+    animation: slideUp 0.5s ease-out 0.1s backwards;
+}
+
+.detail {
+    width: 100%;
+    padding: 10px 50px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    animation: slideUp 0.5s ease-out 0.2s backwards;
+}
+
+.col {
+    width: 90px;
+    height: 90px;
+    transition: transform 0.3s ease;
+}
+
+.col:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add smooth transitions for weather updates */
+.temp, .city, .humidity, .wind {
+    transition: all 0.3s ease;
+}
